@@ -22,7 +22,7 @@ formals(MakeADFun)$silent <- TRUE
 
 * the objective function **must be differentiable** with respect to parameters (no `if()`, `abs()`, `round()`, `min()`, `max()` depending on parameters)
 * exotic probability distributions may be found in [`RTMBdist`](https://janoleko.github.io/RTMBdist/). For other available implementations, anything that descends into C(++)/Fortran code will probably fail.
-If a distribution is not already available, you need to implement it yourself (and may want to issue a pull request).
+If a distribution is not already available, you need to implement it yourself (and may want to issue a pull request to [`RTMBdist`](https://github.com/janoleko/RTMBdist)).
 * aliases to base functions made before call to `library(RTMB)` [might not work](https://github.com/kaskr/RTMB/issues/69)
 * use of `<-[` (see [here](https://groups.google.com/g/tmb-users/c/HlPqkfcCa1g)) etc.
    * specifically, if you use the `c()` function, or if you use the `diag<-` function (which sets the diagonal of a matrix) or the `[<-` function (which assigns values within a matrix), you need to add e.g. `ADoverload("[<-")` to the beginning of your function
